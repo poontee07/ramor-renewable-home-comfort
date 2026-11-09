@@ -11,17 +11,10 @@ export type Enquiry = {
 
 export function buildEnquiryMailto(e: Enquiry) {
   const subject = `Website enquiry: ${e.topic} — ${e.name.trim()}`;
-  const body = [
-    `Name: ${e.name.trim()}`,
-    `Phone: ${e.phone.trim()}`,
-    e.email.trim() && `Email: ${e.email.trim()}`,
-    e.eircode.trim() && `Eircode: ${e.eircode.trim()}`,
-    `Enquiry about: ${e.topic}`,
-    "",
-    e.message.trim(),
-  ]
-    .filter((l) => l !== "" || l === "")
-    .filter((l) => l !== false && l !== undefined)
-    .join("\n");
+  const lines: string[] = [`Name: ${e.name.trim()}`, `Phone: ${e.phone.trim()}`];
+  if (e.email.trim()) lines.push(`Email: ${e.email.trim()}`);
+  if (e.eircode.trim()) lines.push(`Eircode: ${e.eircode.trim()}`);
+  lines.push(`Enquiry about: ${e.topic}`, "", e.message.trim());
+  const body = lines.join("\n");
   return `mailto:${business.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
