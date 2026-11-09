@@ -33,7 +33,7 @@ export const Route = createFileRoute("/contact")({
 const topics = ["Heat pump", "Boiler (gas/oil)", "Heating controls", "Service / repair", "Other"];
 
 function ContactPage() {
-  const [topic, setTopic] = useState(topics[0]);
+  const [topic, setTopic] = useState<string>("Heat pump");
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
