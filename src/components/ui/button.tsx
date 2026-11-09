@@ -16,11 +16,19 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        ember:
+          "rounded-full bg-gradient-ember text-primary-foreground font-semibold shadow-ember hover:brightness-105 hover:-translate-y-0.5 transition-all",
+        pine: "rounded-full bg-pine text-pine-foreground font-semibold hover:bg-pine/90 transition-all",
+        "outline-light":
+          "rounded-full border border-pine-foreground/35 bg-pine-foreground/5 text-pine-foreground font-semibold backdrop-blur-sm hover:bg-pine-foreground/15",
+        "outline-dark":
+          "rounded-full border border-foreground/20 text-foreground font-semibold hover:bg-foreground/5",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
         lg: "h-10 rounded-md px-8",
+        xl: "h-13 px-7 text-base",
         icon: "h-9 w-9",
       },
     },
