@@ -11,8 +11,8 @@ export function SiteFooter() {
         <div className="md:col-span-4">
           <Logo light />
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-pine-muted">
-            Renewable heating, boilers and plumbing for homes across Cavan and the North East.
-            Family-run on the shores of Lough Ramor since {business.founded}.
+            Renewable heating, boilers and plumbing for homes in Cavan and surrounding areas.
+            Based by the shores of Lough Ramor since {business.founded}.
           </p>
         </div>
 

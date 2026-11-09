@@ -22,8 +22,8 @@ export function SiteHeader() {
       <div className="hidden bg-pine text-pine-foreground md:block">
         <div className="container-site flex h-9 items-center justify-between text-xs">
           <span className="text-pine-muted">
-            Heat pumps · Boilers · Smart controls — serving Cavan, Meath &amp; the North East since{" "}
-            {business.founded}
+            Heat pumps · Boilers · Smart controls — serving Virginia, Co. Cavan &amp; surrounding
+            areas since {business.founded}
           </span>
           <a href={`mailto:${business.email}`} className="font-semibold hover:text-ember-glow">
             {business.email}
