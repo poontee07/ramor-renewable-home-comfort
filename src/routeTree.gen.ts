@@ -10,12 +10,30 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GrantsRouteImport } from './routes/grants'
 import { Route as HeatPumpsRouteImport } from './routes/heat-pumps'
 import { Route as ServicesRouteImport } from './routes/services'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrantsRoute = GrantsRouteImport.update({
+  id: '/grants',
+  path: '/grants',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HeatPumpsRoute = HeatPumpsRouteImport.update({
@@ -31,30 +49,50 @@ const ServicesRoute = ServicesRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/grants': typeof GrantsRoute
   '/heat-pumps': typeof HeatPumpsRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/grants': typeof GrantsRoute
   '/heat-pumps': typeof HeatPumpsRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/grants': typeof GrantsRoute
   '/heat-pumps': typeof HeatPumpsRoute
   '/services': typeof ServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/heat-pumps' | '/services'
+  fullPaths:
+    '/' | '/about' | '/contact' | '/grants' | '/heat-pumps' | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/heat-pumps' | '/services'
-  id: '__root__' | '/' | '/heat-pumps' | '/services'
+  to: '/' | '/about' | '/contact' | '/grants' | '/heat-pumps' | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/grants'
+    | '/heat-pumps'
+    | '/services'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  GrantsRoute: typeof GrantsRoute
   HeatPumpsRoute: typeof HeatPumpsRoute
   ServicesRoute: typeof ServicesRoute
 }
@@ -66,6 +104,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/grants': {
+      id: '/grants'
+      path: '/grants'
+      fullPath: '/grants'
+      preLoaderRoute: typeof GrantsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/heat-pumps': {
@@ -87,6 +146,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  GrantsRoute: GrantsRoute,
   HeatPumpsRoute: HeatPumpsRoute,
   ServicesRoute: ServicesRoute,
 }
