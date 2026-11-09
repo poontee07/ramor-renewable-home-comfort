@@ -16,10 +16,7 @@ export const business = {
     eircode: "A82 X9W4",
     country: "Ireland",
   },
-  hours: [
-    { days: "Monday – Friday", time: "08:30 – 17:00" },
-    { days: "Saturday – Sunday", time: "By appointment" },
-  ],
+  hours: [{ days: "Monday – Friday", time: "08:30 – 17:00" }],
   rating: { score: "5.0", count: 9 },
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Ramor+Renewable+Heating+%26+Plumbing+Virginia+Cavan",
