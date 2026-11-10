@@ -5,8 +5,7 @@ export const business = {
   croNumber: "474492",
   founded: 2009,
   phones: [
-    { label: "+353 49 854 3066", href: "tel:+353498543066" },
-    { label: "+353 49 854 8887", href: "tel:+353498548887" },
+    { label: "+353 87 626 3329", href: "tel:+353876263329" },
   ],
   email: "info@rrhp.ie",
   website: "www.rrhp.ie",
