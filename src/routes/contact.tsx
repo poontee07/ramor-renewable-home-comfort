@@ -16,7 +16,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Call +353 49 854 3066 or email info@rrhp.ie. Visit us at Unit 1A, Virginia Shopping Centre, Virginia, Co. Cavan A82 X9W4.",
+          `Call ${business.phones[0].label} or email info@rrhp.ie. Visit us at Unit 1A, Virginia Shopping Centre, Virginia, Co. Cavan A82 X9W4.`,
       },
       { property: "og:title", content: "Contact Ramor Renewable Heating & Plumbing" },
       {
