@@ -5,7 +5,7 @@ import { business } from "@/lib/business";
 describe("Business contact", () => {
   it("uses the corrected phone number for display and calls", () => {
     expect(business.phones).toEqual([
-      { label: "+353 87 626 3329", href: "tel:+353876263329" },
+      { label: "+353 49 854 3066", href: "tel:+353498543066" },
     ]);
   });
 });
